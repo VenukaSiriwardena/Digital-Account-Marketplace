@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "inxo6YRuM1Q=",
+  "dgSpecHash": "RPplme1kuzc=",
   "success": true,
   "projectFilePath": "C:\\Users\\venuk\\OneDrive\\Desktop\\Digital-Account-Marketplace\\Backend-API\\GameStore.Api\\GameStore.Api.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\venuk\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
+    "C:\\Users\\venuk\\.nuget\\packages\\minimalapis.extensions\\0.11.0\\minimalapis.extensions.0.11.0.nupkg.sha512",
+    "C:\\Users\\venuk\\.nuget\\packages\\minivalidation\\0.8.0\\minivalidation.0.8.0.nupkg.sha512"
+  ],
   "logs": []
 }

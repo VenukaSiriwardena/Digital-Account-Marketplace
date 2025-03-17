@@ -33,7 +33,8 @@ List<Game> games = new()
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-var group = app.MapGroup("/games");
+var group = app.MapGroup("/games")
+    .WithParameterValidation();
 
 group.MapGet("/", () => games);
 
@@ -51,7 +52,7 @@ group.MapGet("/{id}", (int id) =>
 .WithName(GetGameEndpointName);
 
 
-group.MapPost("/games", (Game game) =>
+group.MapPost("/", (Game game) =>
 { 
     game.Id = games.Max(game => game.Id) + 1;
     games.Add(game);
