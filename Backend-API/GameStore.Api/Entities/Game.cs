@@ -23,4 +23,5 @@ namespace GameStore.Api.Entities;
         [Url]
         [StringLength(100)]
         public required string ImageUri { get; set; }
+        
     }
