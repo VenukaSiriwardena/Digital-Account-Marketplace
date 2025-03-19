@@ -8,7 +8,7 @@ builder.Services.AddRepositories(builder.Configuration);
 
 var app = builder.Build();
 
-app.Services.InitializeDb();
+await app.Services.InitializeDbAsync();
 
 app.MapGamesEndpoints();
 
