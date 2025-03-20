@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Fetch connection string
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+var connectionString = builder.Configuration.GetConnectionString("GameStoreContext");
 
 // Add DB context with SQL Server
 builder.Services.AddDbContext<GameStoreContext>(options =>
