@@ -5,10 +5,19 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Fetch connection string
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+// Manually get environment variables
+var dbUsername = Environment.GetEnvironmentVariable("DB_USERNAME");
+var dbPassword = Environment.GetEnvironmentVariable("DB_PASSWORD");
 
-// Add DB context with SQL Server
+// Get the connection string template from appsettings.json
+var connectionStringTemplate = builder.Configuration.GetConnectionString("DefaultConnection");
+
+// Replace placeholders with actual values
+var connectionString = connectionStringTemplate
+    .Replace("${DB_USERNAME}", dbUsername)
+    .Replace("${DB_PASSWORD}", dbPassword);
+
+// Register Entity Framework with the final connection string
 builder.Services.AddDbContext<GameStoreContext>(options =>
     options.UseSqlServer(connectionString));
 
